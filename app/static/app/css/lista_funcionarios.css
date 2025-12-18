@@ -25,6 +25,10 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
+.table__body {
+    width: 100%;
+}
+
 .table__row {
     border-bottom: 1px solid #e0e0e0;
 }
@@ -63,4 +67,8 @@
 
 .button__action--remove {
     background-color: #cf2f2f;
+}
+
+.cow--primary {
+    width: 234px;
 }
