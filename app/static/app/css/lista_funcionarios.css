@@ -54,6 +54,7 @@
     height: 100%;
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
 }
 
 .button__action--primary {
@@ -67,6 +68,7 @@
 
 .button__action--remove {
     background-color: #cf2f2f;
+    border: none;
 }
 
 .cow--primary {

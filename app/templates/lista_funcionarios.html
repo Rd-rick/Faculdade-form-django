@@ -48,7 +48,7 @@
                         <td class="table__row__actions">
                             <a href="{% url 'lista_funcionario' pk=funcionario.id %}" class="button__action button__action--primary">Exibir dados</a>
                             <a href="{% url 'editar_funcionario' pk=funcionario.id %}" class="button__action button__action--secondary">Editar</a>
-                            <a href="{% url 'remover_funcionario' pk=funcionario.id %}" class="button__action button__action--remove">Remover</a>
+                            <button type="button" class="button__action button__action--remove" onclick="abrirModal('{{ funcionario.id }}', '{{ funcionario.nome }}')">Remover</button>
                         </td>
                     </tr>
                     {% endfor %}
@@ -60,7 +60,7 @@
     <div class="modal__container">
         <div class="modal__backgroud">
             <h2 class="modal__title"> Confirmação de Remoção</h2>
-            <p class="modal__paragraph">Você tem certeza que deseja remover o funcionário {{ funcionario.nome }}</p>
+            <p class="modal__paragraph">Você tem certeza que deseja remover o funcionário <span id="modal-funcionario-nome"></span></p>
 
             <p class="modal__paragraph">Esta ação é irreversível.</p>
             
@@ -71,6 +71,10 @@
             </form>
         </div>
     </div>
-</body> 
 
+    <script src="{% static 'app/script/excluir.js' %}"></script>
+<script>
+console.log("JS carregado!");
+</script>
+</body> 
 </html>

@@ -134,3 +134,11 @@ body {
 .button--secondary {
     background-color: #cf2f2f;
 }
+
+.button--secondary:hover {
+    color: #fff;
+}
+
+.input--infos {
+    background-color: #89898915;
+}

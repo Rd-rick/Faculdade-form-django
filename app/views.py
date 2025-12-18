@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
 from django.views.generic import CreateView, ListView, UpdateView
 from django.views.generic import (
     CreateView, ListView, UpdateView, DetailView, DeleteView 
@@ -20,7 +19,7 @@ class FuncionarioListView(ListView):
 
 class FuncionarioUpdateView(UpdateView):
     model = Funcionario
-    fields = ("nome", "cpf", "email", "remuneracao")
+    fields = ("nome", "cpf", "data_nascimento", "email", "telefone", "endereco", "cargo", "departamento", "remuneracao")
     template_name = "form_funcionario.html"
     success_url = reverse_lazy("lista_funcionarios") 
 
@@ -31,7 +30,4 @@ class FuncionarioDetailView(DetailView):
 
 class FuncionarioDeleteView(DeleteView):
     model = Funcionario
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        self.object.delete()
-        return HttpResponse(status=204)
+    success_url = reverse_lazy("lista_funcionarios")

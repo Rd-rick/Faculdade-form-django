@@ -32,19 +32,19 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="id_nome" class="form__label color--secondary">Nome e Sobrenome:</label>
-                                <input type="text" name="nome" maxlength="50" class="form__input" placeholder="Nome completo" required id="id_nome" value="{{ fun.nome }}" readonly>
+                                <input type="text" name="nome" maxlength="50" class="form__input input--infos" placeholder="Nome completo" required id="id_nome" value="{{ fun.nome }}" readonly>
                             </div>
                         </div>
     
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="id_cpf" class="form__label color--secondary">Cpf:</label>
-                                <input type="text" name="cpf" maxlength="14" class="form__input" placeholder="000.000.000-00" required id="id_cpf" value="{{ fun.cpf }}" readonly>
+                                <input type="text" name="cpf" maxlength="14" class="form__input input--infos" placeholder="000.000.000-00" required id="id_cpf" value="{{ fun.cpf }}" readonly>
                             </div>
     
                             <div class="form-group">
                                 <label for="id_email" class="form__label color--secondary">Data de Nascimento:</label>
-                                <input type="date" name="data_nascimento" class="form__input" required id="id_birth_date" value="{{ fun.data_nascimento|date:'Y-m-d' }}" readonly>
+                                <input type="date" name="data_nascimento" class="form__input input--infos" required id="id_birth_date" value="{{ fun.data_nascimento|date:'Y-m-d' }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -57,19 +57,19 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="id_email" class="form__label color--secondary">Email:</label>
-                                <input type="email" name="email" maxlength="254" class="form__input" placeholder="exemplo@gmail.com" required id="id_email" value="{{ fun.email }}" readonly>
+                                <input type="email" name="email" maxlength="254" class="form__input input--infos" placeholder="exemplo@gmail.com" required id="id_email" value="{{ fun.email }}" readonly>
                             </div>
                             
                             <div class="form-group">
                                 <label for="telefone" class="form__label color--secondary">Telefone:</label>
-                                <input type="text" name="telefone" class="form__input" id="id_phone" placeholder="(XX) XXXXX-XXXX" value="{{ fun.telefone }}" readonly>
+                                <input type="text" name="telefone" class="form__input input--infos" id="id_phone" placeholder="(XX) XXXXX-XXXX" value="{{ fun.telefone }}" readonly>
                             </div>
                         </div>
 
                         <div class="form_row">
                             <div class="form-group">
                                 <label for="id_address" class="form__label color--secondary">Endereço:</label>
-                                <textarea name="endereco" class="form__input" id="id_address" rows="3" placeholder="Rua, Número, Bairro, Cidade, Estado" readonly>{{ fun.endereco }}</textarea>
+                                <textarea name="endereco" class="form__input input--infos" id="id_address" rows="3" placeholder="Rua, Número, Bairro, Cidade, Estado" readonly>{{ fun.endereco }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="id_position" class="form__label color--secondary">Departamento:</label>
-                                <select name="cargo" id="id_position" class="form__input" disabled>
+                                <select name="cargo" id="id_position" class="form__input input--infos" disabled>
                                     <option disabled selected>Selecione um cargo</option>
                                     <option value="DEV" {% if fun.cargo == "DEV" %}selected{% endif %}>Desenvolvedor</option>
                                     <option value="QA" {% if fun.cargo == "QA" %}selected{% endif %}>QA</option>
@@ -93,14 +93,14 @@
                             
                             <div class="form-group">
                                 <label for="id_departament" class="form__label color--secondary">Departamento:</label>
-                                <input type="text" name="departamento" class="form__input" id="id_departament" placeholder="Ex: Ti, Vendas" value="{{ fun.departamento }}" readonly>
+                                <input type="text" name="departamento" class="form__input input--infos" id="id_departament" placeholder="Ex: Ti, Vendas" value="{{ fun.departamento }}" readonly>
                             </div>
                         </div>
 
                         <div class="form_row">
                             <div class="form-group">
                                 <label for="id_remuneracao">Remuneracao (R$):</label>
-                                <input type="number" name="remuneracao" step="0.01" class="form__input" placeholder="0.00" required id="id_remuneracao" value={{fun.remuneracao|floatformat:2 }} readonly>
+                                <input type="number" name="remuneracao" step="0.01" class="form__input input--infos" placeholder="0.00" required id="id_remuneracao" value={{fun.remuneracao|floatformat:2 }} readonly>
                             </div>
                         </div>
                     </div>
