@@ -59,10 +59,10 @@
 
     <div class="modal__container">
         <div class="modal__backgroud">
-            <h2> Confirmação de Remoção</h2>
-            <p>Você tem certeza que deseja remover o funcionário {{ funcionario.nome }}</p>
+            <h2 class="modal__title"> Confirmação de Remoção</h2>
+            <p class="modal__paragraph">Você tem certeza que deseja remover o funcionário {{ funcionario.nome }}</p>
 
-            <p>Esta ação é irreversível.</p>
+            <p class="modal__paragraph">Esta ação é irreversível.</p>
             
             <form method="post">
                 {% csrf_token %}

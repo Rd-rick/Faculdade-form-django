@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from django.http import HttpResponse
 from django.views.generic import CreateView, ListView, UpdateView
 from django.views.generic import (
     CreateView, ListView, UpdateView, DetailView, DeleteView 
@@ -30,5 +31,7 @@ class FuncionarioDetailView(DetailView):
 
 class FuncionarioDeleteView(DeleteView):
     model = Funcionario
-    template_name = "remover_funcionario.html"
-    success_url = reverse_lazy("lista_funcionarios")
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.delete()
+        return HttpResponse(status=204)
