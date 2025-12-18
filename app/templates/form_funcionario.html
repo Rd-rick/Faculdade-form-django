@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Funcionários</title>
+    {% bootstrap_css %}
+
+    <link rel="stylesheet" href="{% static 'app/css/form_funcionario.css' %}">
+
+    {% bootstrap_javascript%}
+</head>
+
+<body>
+    <div class="container__section">
+        <div class="background">
+            <header class="funcionario-cadastro">
+                <h1 class="funcionario-cadastro__title title color--primary">Cadastro de Novo Funcionário</h1>
+                <p class="funcionario-cadastro__text text--primary color--secondary">Preencha os dados abaixo para registrar um novo colaborador.</p>
+            </header>
+            <form method="post" class="funcionario-cadastro__form" action="{% url 'form_funcionario' %}">
+                {% csrf_token %}
+
+                <div class=" form form__dados-pessoais">
+                    <h2 class="form__title color--primary">Dados Pessoais</h2>
+                    <div class="form__content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_nome" class="form__label color--secondary">Nome e Sobrenome:</label>
+                                <input type="text" name="nome" maxlength="50" class="form__input" placeholder="Nome completo" required id="id_nome">
+                            </div>
+                        </div>
+    
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_cpf" class="form__label color--secondary">Cpf:</label>
+                                <input type="text" name="cpf" maxlength="14" class="form__input" placeholder="000.000.000-00" required id="id_cpf">
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="id_email" class="form__label color--secondary">Data de Nascimento:</label>
+                                <input type="date" name="data_nascimento" class="form__input" required id="id_birth_date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" form form__contato">
+                    <h2 class="form__title color--primary">Contato</h2>
+                    <div class="form__content">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_email" class="form__label color--secondary">Email:</label>
+                                <input type="email" name="email" maxlength="254" class="form__input" placeholder="exemplo@gmail.com" required id="id_email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone" class="form__label color--secondary">Telefone:</label>
+                                <input type="text" name="telefone" class="form__input" id="id_phone" placeholder="(XX) XXXXX-XXXX">
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form-group">
+                                <label for="id_address" class="form__label color--secondary">Endereço:</label>
+                                <textarea name="endereco" class="form__input" id="id_address" rows="3" placeholder="Rua, Número, Bairro, Cidade, Estado"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" form form__contato">
+                    <h2 class="form__title color--primary">Contato</h2>
+                    <div class="form__content">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_position" class="form__label color--secondary">Departamento:</label>
+                                <select name="cargo" id="id_position" class="form__input">
+                                    <option disabled selected>Selecione um cargo</option>
+                                    <option value="DEV">Desenvolvedor</option>
+                                    <option value="QA">QA</option>
+                                    <option value="MKT">Marketing</option>
+                                    <option value="DG">Designer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="id_departament" class="form__label color--secondary">Departamento:</label>
+                                <input type="text" name="departamento" class="form__input" id="id_departament" placeholder="Ex: Ti, Vendas">
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form-group">
+                                <label for="id_remuneracao">Remuneracao (R$):</label>
+                                <input type="number" name="remuneracao" step="0.01" class="form__input" placeholder="0.00" required id="id_remuneracao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__submit">
+                    <input type="submit" class="button button--primary" value="Cadastrar Funcionário"></input>
+                    <a href="{% url 'lista_funcionarios' %}" class="button button--secondary">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

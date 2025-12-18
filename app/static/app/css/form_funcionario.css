@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f7f6;
+    padding: 20px 20px;
+}
+
+.container__section {
+    max-width: 100%;
+    width: 940px;
+    margin: auto;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.funcionario-cadastro__title {
+    margin-top: 15px;
+}
+
+.funcionario-cadastro__text {
+    margin-top: 18px;
+}
+
+.funcionario-cadastro__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.form__title {
+    position: absolute;
+    top: -13px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+.form__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 9px;
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form__input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.form__submit {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.color--secondary {
+    color: #555;
+}
+
+.color--primary {
+    color: #007bff;
+}
+
+.button {
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+.button--primary {
+    background-color: #28a745;
+}
+
+.button--secondary {
+    background-color: #cf2f2f;
+}

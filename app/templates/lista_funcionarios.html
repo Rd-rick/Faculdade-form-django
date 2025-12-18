@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Funcionários</title>
+    <style type="text/css">
+        html {
+        margin: 2%;
+        }
+    </style> 
+    {% bootstrap_css %}
+
+    <link rel="stylesheet" href="{% static 'app/css/form_funcionario.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/lista_funcionarios.css' %}">
+
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <div class="container__section">
+        <div class="background">
+            <header class="funcionario-cadastro lista-funcionarios">
+                <h1 class="funcionario-cadastro__title title color--primary">Lista de Funcionários</h1>
+                <p class="funcionario-cadastro__text text--primary color--secondary">Visualização de todos os colaboradores registrados.</p>
+                <div class="header__action">
+                    <a href="{% url 'form_funcionario' %}" class="btn btn-primary">+ Novo Funcionário</a> 
+                </div>
+            </header>
+
+            <table class="section__table">
+                <thead class="table__header">
+                    <tr>
+                        <th class="table__cow__title">Nome do funcionário</th>
+                        <th class="table__cow__title">Ações</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr class="table__row">
+                    {% for funcionario in object_list %}
+                    <td class="table__row__item">
+                        {{ funcionario.nome }}
+                    </td>
+                    <td class="table__row__actions">
+                    <a href="{% url 'lista_funcionario' pk=funcionario.id %}" class="button__action button__action--primary">Exibir dados</a>
+                    <a href="{% url 'editar_funcionario' pk=funcionario.id %}" class="button__action button__action--secondary">Editar</a>
+                    <a href="{% url 'remover_funcionario' pk=funcionario.id %}" class="button__action button__action--remove">Remover</a>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body> 
+
+</html>
