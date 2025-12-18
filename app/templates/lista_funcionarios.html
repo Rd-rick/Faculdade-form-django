@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="{% static 'app/css/form_funcionario.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/lista_funcionarios.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/modal_excluir.css' %}">
 
     {% bootstrap_javascript %}
 </head>
@@ -53,6 +54,21 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div class="modal__container">
+        <div class="modal__backgroud">
+            <h2> Confirmação de Remoção</h2>
+            <p>Você tem certeza que deseja remover o funcionário {{ funcionario.nome }}</p>
+
+            <p>Esta ação é irreversível.</p>
+            
+            <form method="post">
+                {% csrf_token %}
+                <button type="button" class="btn btn-success" onclick="fecharModal()"> Voltar </button>
+                <input type="submit" class="btn btn-primary" value="Sim, Remover"></input>
+            </form>
         </div>
     </div>
 </body> 

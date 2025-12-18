@@ -11,16 +11,20 @@
 </head>
 
 <body>
-    <h2> Funcionário: {{ funcionario.nome }} </h2>
-    <li>CPF: {{ funcionario.cpf }}</li>
-    <li>E-mail: {{ funcionario.email }}</li>
-    <li>Remuneração: {{ funcionario.remuneracao }}</li>
+    <div class="modal__container">
+        <div class="modal__backgroud">
+            <h2> Confirmação de Remoção</h2>
+            <p>Você tem certeza que deseja remover o funcionário {{ funcionario.nome }}</p>
 
-    <form method="post">
-        {% csrf_token %}
-        <input type="submit" class="btn btn-primary" value="Exckuir"></input>
-        <button type="button" class="btn btn-success" onClick="history.go(-1)"> Voltar </button>
-    </form>
+            <p>Esta ação é irreversível.</p>
+            
+            <form method="post">
+                {% csrf_token %}
+                <button type="button" class="btn btn-success" onclick="fecharModal()"> Voltar </button>
+                <input type="submit" class="btn btn-primary" value="Sim, Remover"></input>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
